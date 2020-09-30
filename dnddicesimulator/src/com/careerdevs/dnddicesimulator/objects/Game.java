@@ -7,13 +7,13 @@ public class Game {
     public static void Play(){
        System.out.print("Play Game\n---------\n");
        out.println("Default: Die value : ");
-       Die die=new Die(20);
+       Die dieTwenty=new Die(20);
      // out.print(die.getFaceUp());
-        Console.DisplayDie(die);
+        Console.DisplayDie(dieTwenty);
       out.print("\n------------------------\n");
-       die.Roll();
-      Console.DisplayDie(die);
-      Calculator.Attack(die.getFaceUp());
+       dieTwenty.Roll();
+      Console.DisplayDie(dieTwenty);
+      Calculator.Attack(dieTwenty.getFaceUp());
 
 
 
