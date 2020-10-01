@@ -7,8 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Game.Play();
-        Calculator.Damage("2d10");
+        Game.Play();
+
 
 
     }
