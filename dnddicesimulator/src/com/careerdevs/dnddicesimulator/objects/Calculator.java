@@ -5,13 +5,25 @@ import static java.lang.System.out;
 public class Calculator {
 
     public static void Attack(int rolledNumber) {
-        if (rolledNumber == 20) {
-            out.println("Critical Hit");
-            
+
+        switch(rolledNumber) {
+
+            case 20:
+                out.println("Crit hit");
+                break;
+            case  1:
+                out.println("Crit miss");
+                break;
+            default:
+                out.println("normal: you may or may not landed a hit");
         }
-        if (rolledNumber == 1) {
-            out.println("Critical Miss");
-        }
+//        if (rolledNumber == 20) {
+//            out.println("Critical Hit");
+//
+//        }
+//        if (rolledNumber == 1) {
+//            out.println("Critical Miss");
+//        }
     }
 
     public static int Damage(String dice) {
