@@ -6,26 +6,12 @@ public class Calculator {
 
     public static void Attack(int rolledNumber) {
 
-        switch(rolledNumber) {
-
-            case 20:
-                out.println("Crit hit");
-                break;
-            case  1:
-                out.println("Crit miss");
-                break;
-            default:
-                out.println("normal: you may or may not landed a hit");
+        switch (rolledNumber) {
+            case 20 -> out.println("Crit hit");
+            case 1 -> out.println("Crit miss");
+            default -> out.println("normal: you may or may not landed a hit");
         }
-//        if (rolledNumber == 20) {
-//            out.println("Critical Hit");
-//
-//        }
-//        if (rolledNumber == 1) {
-//            out.println("Critical Miss");
-//        }
     }
-
     public static int Damage(String dice) {
             int totalDamage=0;
             int roll=0;

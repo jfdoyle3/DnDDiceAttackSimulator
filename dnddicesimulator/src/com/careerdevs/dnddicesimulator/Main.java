@@ -7,11 +7,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-       // Game.Play();
+        Game.Play();
 
-     //   System.out.println(Calculator.Damage("20d10"));
 
-        Calculator.Attack(6);
+
+
 
     }
 }
