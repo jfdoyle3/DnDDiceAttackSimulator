@@ -25,5 +25,8 @@ public class Console {
 //        return intArray;
 //
 //    }
+    public static void AttackOutput(int damage){
+        out.println("total Damage: "+damage);
+    }
 
 }
