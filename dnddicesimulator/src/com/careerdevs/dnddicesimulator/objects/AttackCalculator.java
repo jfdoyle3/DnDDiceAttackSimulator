@@ -31,20 +31,19 @@ public class AttackCalculator {
     }
 
     public static int Damage(String dice) {
-            int diceDamage=0;
-            int roll=0;
-            String[] diceArray=dice.split( "d");
-            if(diceArray[0].equals("")) {
-                roll=1;
-            } else {
-                roll = Integer.parseInt(diceArray[0]);
-            }
-            Die die=new Die(Integer.parseInt((diceArray[1])));
+      int diceDamage=0;
+      int roll=0;
+      String[] diceArray=dice.split( "d");
+      if(diceArray[0].equals("")) {
+           roll=1;
+        } else {
+           roll = Integer.parseInt(diceArray[0]);
+        }
+        Die die=new Die(Integer.parseInt((diceArray[1])));
        do{
-            die.Roll();
-            diceDamage+=die.getFaceUp();
-
-            roll--;
+          die.Roll();
+          diceDamage+=die.getFaceUp();
+          roll--;
        }while(roll>0);
 
         return diceDamage;
