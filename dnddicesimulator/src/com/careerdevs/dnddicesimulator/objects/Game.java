@@ -11,7 +11,7 @@ public class Game {
       Die dieTwenty=new Die(20);
       Console.DisplayDie(dieTwenty);
 
-      AttackCalculator.Attack(RollDie(dieTwenty),"2d10");
+      AttackCalculator.Attack(5,2,3,RollDie(dieTwenty),"2d10");
        
 }
 

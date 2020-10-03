@@ -4,11 +4,13 @@ import static java.lang.System.out;
 
 public class AttackCalculator {
 
-    private static int totalDamage;
+    private static int totalDamage,toHitRoll;
 
 
-    public static int Attack(int rolledNumber, String damageDice) {
+
+    public static int Attack(int ac, int attackModifier, int defenseModifier, int rolledNumber, String damageDice) {
          totalDamage = 0;
+         toHitRoll=0;
         switch (rolledNumber) {
             case 20-> out.println("Crit hit");
             case 1 -> out.println("Crit miss");
@@ -17,6 +19,13 @@ public class AttackCalculator {
         if (rolledNumber==1){
             totalDamage=0;
         }
+        if (rolledNumber==20){
+            totalDamage=Damage(damageDice)+Damage(damageDice);
+        }
+        if (toHitRoll==rolledNumber) {
+            totalDamage=Damage(damageDice);
+        }
+
 
         return totalDamage;
     }
@@ -34,6 +43,7 @@ public class AttackCalculator {
        do{
             die.Roll();
             diceDamage+=die.getFaceUp();
+
             roll--;
        }while(roll>0);
 

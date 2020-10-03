@@ -4,6 +4,8 @@ public class Player {
 
     private int armorClass;
     private int hitPoints;
+    private int attackModifier;
+    private int defenseModifier;
 
     public Player(int armorClass, int hitPoints){
         this.armorClass=armorClass;
