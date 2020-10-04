@@ -4,8 +4,7 @@ import static java.lang.System.out;
 
 public class AttackCalculator {
 
-    private static int totalDamage,toHitRoll;
-
+    private static int totalDamage,toHitRoll,ac, defenseMod, attackModifier;
 
 
     public static int Attack(int ac, int attackModifier, int defenseModifier, int rolledNumber, String damageDice) {
@@ -25,7 +24,6 @@ public class AttackCalculator {
         if (toHitRoll==rolledNumber) {
             totalDamage=Damage(damageDice);
         }
-
 
         return totalDamage;
     }
@@ -48,6 +46,7 @@ public class AttackCalculator {
 
         return diceDamage;
     }
+
 }
 
 //    create a Calculator class that has the attack method: it should accept the following:
