@@ -19,7 +19,7 @@ public class AttackCalculator {
 		this.attackModifier = attackModifier;
 	}
     
-	public static int Attack(int ac, int attackModifier, int defenseModifier, int rolledNumber, String damageDice) {
+	public static int Attack(byte ac, byte attackModifier, byte defenseModifier, byte rolledNumber, String damageDice) {
 
         switch (rolledNumber) {
             case 20-> out.println("Crit hit");
@@ -40,13 +40,13 @@ public class AttackCalculator {
     }
 
     public static int Damage(String dice) {
-      int diceDamage=0;
-      int roll=0;
+      byte diceDamage=0;
+      byte roll=0;
       String[] diceArray=dice.split( "d");
       if(diceArray[0].equals("")) {
            roll=1;
         } else {
-           roll = Integer.parseInt(diceArray[0]);
+           roll = Byte.parseByte(diceArray[0]);
         }
         Die die=new Die(Integer.parseInt((diceArray[1])));
        do{
