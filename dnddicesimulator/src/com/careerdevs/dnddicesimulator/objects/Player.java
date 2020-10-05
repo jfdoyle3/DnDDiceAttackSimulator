@@ -6,26 +6,35 @@ public class Player {
     private int hitPoints;
     private int attackModifier;
     private int defenseModifier;
+    
+	public Player() {
+		
+	}
 
-    public Player(int armorClass, int hitPoints){
-        this.armorClass=armorClass;
-        this.hitPoints=hitPoints;
+	public Player(int armorClass, int hitPoints, int attackModifier, int defenseModifier) {
+		super();
+		this.armorClass = armorClass;
+		this.hitPoints = hitPoints;
+		this.attackModifier = attackModifier;
+		this.defenseModifier = defenseModifier;
+	}
 
-    }
+	public int getArmorClass() {
+		return armorClass;
+	}
 
-    public int getArmorClass() {
-        return armorClass;
-    }
+	public int getHitPoints() {
+		return hitPoints;
+	}
 
-    public void setArmorClass(int armorClass) {
-        this.armorClass = armorClass;
-    }
+	public int getAttackModifier() {
+		return attackModifier;
+	}
 
-    public int getHitPoints() {
-        return hitPoints;
-    }
+	public int getDefenseModifier() {
+		return defenseModifier;
+	}
 
-    public void setHitPoints(int hitPoints) {
-        this.hitPoints = hitPoints;
-    }
+
+
 }

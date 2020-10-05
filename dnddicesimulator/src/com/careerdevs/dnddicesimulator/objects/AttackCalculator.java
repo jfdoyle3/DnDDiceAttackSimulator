@@ -4,12 +4,23 @@ import static java.lang.System.out;
 
 public class AttackCalculator {
 
-    private static int totalDamage,toHitRoll,ac, defenseMod, attackModifier;
+    private static int totalDamage;
+    private int toHitRoll;
+    private int ac;
+    private int defenseMod;
+    private int attackModifier;
 
+ 
 
-    public static int Attack(int ac, int attackModifier, int defenseModifier, int rolledNumber, String damageDice) {
-         totalDamage = 0;
-         toHitRoll=0;
+    public AttackCalculator( int toHitRoll, int ac, int defenseMod, int attackModifier) {
+		this.toHitRoll = toHitRoll;
+		this.ac = ac;
+		this.defenseMod = defenseMod;
+		this.attackModifier = attackModifier;
+	}
+    
+	public static int Attack(int ac, int attackModifier, int defenseModifier, int rolledNumber, String damageDice) {
+
         switch (rolledNumber) {
             case 20-> out.println("Crit hit");
             case 1 -> out.println("Crit miss");
@@ -21,9 +32,9 @@ public class AttackCalculator {
         if (rolledNumber==20){
             totalDamage=Damage(damageDice)+Damage(damageDice);
         }
-        if (toHitRoll==rolledNumber) {
-            totalDamage=Damage(damageDice);
-        }
+//        if (toHitRoll==rolledNumber) {
+//            totalDamage=Damage(damageDice);
+//        }
 
         return totalDamage;
     }
@@ -46,6 +57,48 @@ public class AttackCalculator {
 
         return diceDamage;
     }
+
+
+	public static int getTotalDamage() {
+		return totalDamage;
+	}
+
+	public static void setTotalDamage(int totalDamage) {
+		AttackCalculator.totalDamage = totalDamage;
+	}
+
+	public int getToHitRoll() {
+		return toHitRoll;
+	}
+
+	public void setToHitRoll(int toHitRoll) {
+		this.toHitRoll = toHitRoll;
+	}
+
+	public int getAc() {
+		return ac;
+	}
+
+	public void setAc(int ac) {
+		this.ac = ac;
+	}
+
+	public int getDefenseMod() {
+		return defenseMod;
+	}
+
+	public void setDefenseMod(int defenseMod) {
+		this.defenseMod = defenseMod;
+	}
+
+	public int getAttackModifier() {
+		return attackModifier;
+	}
+
+	public void setAttackModifier(int attackModifier) {
+		this.attackModifier = attackModifier;
+	}
+
 
 }
 
