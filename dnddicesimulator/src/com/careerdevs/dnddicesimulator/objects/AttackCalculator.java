@@ -4,22 +4,22 @@ import static java.lang.System.out;
 
 public class AttackCalculator {
 
-    private static int totalDamage;
-    private int toHitRoll;
-    private int ac;
-    private int defenseMod;
-    private int attackModifier;
+    private static byte totalDamage;
+    private byte toHitRoll;
+    private byte ac;
+    private byte defenseMod;
+    private byte attackModifier;
 
  
 
-    public AttackCalculator( int toHitRoll, int ac, int defenseMod, int attackModifier) {
+    public AttackCalculator( byte toHitRoll, byte ac, byte defenseMod, byte attackModifier) {
 		this.toHitRoll = toHitRoll;
 		this.ac = ac;
 		this.defenseMod = defenseMod;
 		this.attackModifier = attackModifier;
 	}
     
-	public static int Attack(byte ac, byte attackModifier, byte defenseModifier, byte rolledNumber, String damageDice) {
+	public static byte Attack(byte ac, byte attackModifier, byte defenseModifier, byte rolledNumber, String damageDice) {
 
         switch (rolledNumber) {
             case 20-> out.println("Crit hit");
@@ -30,7 +30,7 @@ public class AttackCalculator {
             totalDamage=0;
         }
         if (rolledNumber==20){
-            totalDamage=Damage(damageDice)+Damage(damageDice);
+            totalDamage=(byte) (Damage(damageDice)+Damage(damageDice));
         }
 //        if (toHitRoll==rolledNumber) {
 //            totalDamage=Damage(damageDice);
@@ -39,7 +39,7 @@ public class AttackCalculator {
         return totalDamage;
     }
 
-    public static int Damage(String dice) {
+    public static byte Damage(String dice) {
       byte diceDamage=0;
       byte roll=0;
       String[] diceArray=dice.split( "d");
@@ -48,7 +48,7 @@ public class AttackCalculator {
         } else {
            roll = Byte.parseByte(diceArray[0]);
         }
-        Die die=new Die(Integer.parseInt((diceArray[1])));
+        Die die=new Die(Byte.parseByte((diceArray[1])));
        do{
           die.Roll();
           diceDamage+=die.getFaceUp();
@@ -57,45 +57,51 @@ public class AttackCalculator {
 
         return diceDamage;
     }
+    
+    public static byte defense(byte ac, byte defenseModifier) {
+    	byte defense=(byte) (ac+defenseModifier);
+    	return defense;
+    }
 
 
-	public static int getTotalDamage() {
+
+	public static byte getTotalDamage() {
 		return totalDamage;
 	}
 
-	public static void setTotalDamage(int totalDamage) {
+	public static void setTotalDamage(byte totalDamage) {
 		AttackCalculator.totalDamage = totalDamage;
 	}
 
-	public int getToHitRoll() {
+	public byte getToHitRoll() {
 		return toHitRoll;
 	}
 
-	public void setToHitRoll(int toHitRoll) {
+	public void setToHitRoll(byte toHitRoll) {
 		this.toHitRoll = toHitRoll;
 	}
 
-	public int getAc() {
+	public byte getAc() {
 		return ac;
 	}
 
-	public void setAc(int ac) {
+	public void setAc(byte ac) {
 		this.ac = ac;
 	}
 
-	public int getDefenseMod() {
+	public byte getDefenseMod() {
 		return defenseMod;
 	}
 
-	public void setDefenseMod(int defenseMod) {
+	public void setDefenseMod(byte defenseMod) {
 		this.defenseMod = defenseMod;
 	}
 
-	public int getAttackModifier() {
+	public byte getAttackModifier() {
 		return attackModifier;
 	}
 
-	public void setAttackModifier(int attackModifier) {
+	public void setAttackModifier(byte attackModifier) {
 		this.attackModifier = attackModifier;
 	}
 
@@ -103,5 +109,5 @@ public class AttackCalculator {
 }
 
 //    create a Calculator class that has the attack method: it should accept the following:
-//        (int ac, int defenseMod, int attackModifier, string damageDice)
-//int ac, int defenseMod, int attackModifier,
+//        (byte ac, byte defenseMod, byte attackModifier, string damageDice)
+//byte ac, byte defenseMod, byte attackModifier,
