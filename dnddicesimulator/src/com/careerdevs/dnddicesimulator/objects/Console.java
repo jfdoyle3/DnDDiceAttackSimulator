@@ -19,33 +19,31 @@ public class Console {
         out.println("total Damage: "+damage);
     }
     
-//    public static void InputPlayer(Player player) {
-//    	Scanner input=new Scanner(System.in);
-//}
+
     
     public static List<Byte> InputStats() {
     	List<Byte> stats=new ArrayList<Byte>();
-    	Scanner input=new Scanner(System.in);
-    	System.out.print("Armor Class: ");
-    	stats.add(input.nextByte());
-    	System.out.print("Attack Modifier: ");
-    	//byte attackModifier=input.nextByte();
-    	stats.add(input.nextByte());
-    	System.out.print("Defense Modifier: ");
-    	//byte defenseModifier=input.nextByte();
-       	stats.add(input.nextByte());
-       	
-       	return stats;
+    	try (Scanner input = new Scanner(System.in)) {
+			System.out.print("Armor Class: ");
+			stats.add(input.nextByte());
+			System.out.print("Attack Modifier: ");
+			//byte attackModifier=input.nextByte();
+			stats.add(input.nextByte());
+			System.out.print("Defense Modifier: ");
+			//byte defenseModifier=input.nextByte();
+			stats.add(input.nextByte());
+		}
+    	return stats;
     
     }
     
-//    public static int[] DamageDiceInput(){
+//    public static byte[] DamageDiceInput(){
 //    	Scanner input=new Scanner(System.in);
 //        String dice=input.nextLine();
 //        String[] diceArray=dice.split( "d");
-//        int[] intArray=new int[diceArray.length];
+//        byte[] intArray=new byte[diceArray.length];
 //        for(int idx=0; idx<dice.length(); idx++){
-//            int intNumber = Integer.parseInt(diceArray[idx]);
+//            byte intNumber = Byte.parseByte(diceArray[idx]);
 //            intArray[idx]=intNumber;
 //        }
 

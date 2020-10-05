@@ -11,7 +11,12 @@ public class Game {
       out.print("Default: Die value : ");
       List<Byte> inputStats=Console.InputStats();
       Die dieTwenty=new Die(20);
+      RollDie(dieTwenty);
       Console.DisplayDie(dieTwenty);
+      byte defense=AttackCalculator.defense(inputStats.get(0), inputStats.get(2));
+      System.out.println(defense);
+      
+
 
     //  AttackCalculator.Attack(5,2,3,RollDie(dieTwenty),"2d10");
        

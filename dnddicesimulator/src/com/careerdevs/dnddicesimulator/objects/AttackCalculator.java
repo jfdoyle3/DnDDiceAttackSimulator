@@ -63,7 +63,10 @@ public class AttackCalculator {
     	return defense;
     }
 
-
+    public static int toHit(int dieRoll, byte attackModifier) {
+    		int attack=dieRoll+attackModifier;
+    	return attack;
+    }
 
 	public static byte getTotalDamage() {
 		return totalDamage;
