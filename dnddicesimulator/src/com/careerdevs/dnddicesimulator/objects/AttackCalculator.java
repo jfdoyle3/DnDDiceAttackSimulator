@@ -22,14 +22,15 @@ public class AttackCalculator {
 	public static byte Attack(byte ac, byte attackModifier, byte defenseModifier, byte rolledNumber, String damageDice) {
 
         switch (rolledNumber) {
-            case 20-> out.println("Crit hit");
-            case 1 -> out.println("Crit miss");
-            default -> out.println("normal: you may or may not landed a hit");
+          
+         // out.println("normal: you may or may not landed a hit");
         }
         if (rolledNumber==1){
+        	out.println("Crit miss");
             totalDamage=0;
         }
         if (rolledNumber==20){
+        	out.println("Crit hit");
             totalDamage=(byte) (Damage(damageDice)+Damage(damageDice));
         }
 //        if (toHitRoll==rolledNumber) {

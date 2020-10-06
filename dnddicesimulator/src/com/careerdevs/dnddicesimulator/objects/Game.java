@@ -7,17 +7,17 @@ import java.util.List;
 public class Game {
 
     public static void Play(){
-      System.out.print("Play Game\n---------\n");
-      out.print("Default: Die value : ");
+      out.print("Play Game\n---------\n");
       List<Byte> inputStats=Console.InputStats();
       Die dieTwenty=new Die(20);
-      RollDie(dieTwenty);
+      int roll=RollDie(dieTwenty);
       Console.DisplayDie(dieTwenty);
       byte defense=AttackCalculator.defense(inputStats.get(0), inputStats.get(2));
-      System.out.println(defense);
+      out.println(defense);
+      out.println("Rolled: "+roll);
       
-
-
+      
+    
     //  AttackCalculator.Attack(5,2,3,RollDie(dieTwenty),"2d10");
        
 }
