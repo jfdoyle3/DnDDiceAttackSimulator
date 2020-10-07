@@ -69,45 +69,6 @@ public class AttackCalculator {
     	return attack;
     }
 
-	public static byte getTotalDamage() {
-		return totalDamage;
-	}
-
-	public static void setTotalDamage(byte totalDamage) {
-		AttackCalculator.totalDamage = totalDamage;
-	}
-
-	public byte getToHitRoll() {
-		return toHitRoll;
-	}
-
-	public void setToHitRoll(byte toHitRoll) {
-		this.toHitRoll = toHitRoll;
-	}
-
-	public byte getAc() {
-		return ac;
-	}
-
-	public void setAc(byte ac) {
-		this.ac = ac;
-	}
-
-	public byte getDefenseMod() {
-		return defenseMod;
-	}
-
-	public void setDefenseMod(byte defenseMod) {
-		this.defenseMod = defenseMod;
-	}
-
-	public byte getAttackModifier() {
-		return attackModifier;
-	}
-
-	public void setAttackModifier(byte attackModifier) {
-		this.attackModifier = attackModifier;
-	}
 
 
 }
