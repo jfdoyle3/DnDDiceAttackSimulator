@@ -7,10 +7,6 @@ public class Player {
     private int attackModifier;
     private int defenseModifier;
     
-	public Player() {
-		
-	}
-
 	public Player(int armorClass, int hitPoints, int attackModifier, int defenseModifier) {
 		super();
 		this.armorClass = armorClass;
@@ -34,7 +30,4 @@ public class Player {
 	public int getDefenseModifier() {
 		return defenseModifier;
 	}
-
-
-
 }

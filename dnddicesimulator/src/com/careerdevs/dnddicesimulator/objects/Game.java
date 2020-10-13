@@ -8,12 +8,12 @@ public class Game {
 
     public static void Play(){
       out.print("Play Game\n---------\n");
-      List<Byte> inputStats=Console.InputStats();
+      List<Byte> inputStats=Input.InputStats();
       Die dieTwenty=new Die(20);
-      int roll=RollDie(dieTwenty);
-      Console.DisplayDie(dieTwenty);
+      int roll=DungeonDice.RollDie(dieTwenty);
+      //Console.DisplayDie(dieTwenty);
       byte defense=AttackCalculator.defense(inputStats.get(0), inputStats.get(2));
-      out.println(defense);
+      out.printf("\n def: %d\n",defense);
       out.println("Rolled: "+roll);
       
       
@@ -22,9 +22,5 @@ public class Game {
        
 }
 
-    public static int RollDie(Die die) {
-        die.Roll();
-        return die.getFaceUp();
-    }
 
 }

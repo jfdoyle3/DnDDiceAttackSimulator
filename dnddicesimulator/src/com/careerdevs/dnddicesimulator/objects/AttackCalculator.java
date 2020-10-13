@@ -68,9 +68,6 @@ public class AttackCalculator {
     		int attack=dieRoll+attackModifier;
     	return attack;
     }
-
-
-
 }
 
 //    create a Calculator class that has the attack method: it should accept the following:

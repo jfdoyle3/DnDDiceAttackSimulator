@@ -10,31 +10,12 @@ import java.util.Scanner;
 public class Console {
 
 
-
     public static void DisplayDie(Die die){
         out.println(die.getFaceUp());
     }
     
     public static void DamageOutput(int damage){
         out.println("total Damage: "+damage);
-    }
-    
-
-    
-    public static List<Byte> InputStats() {
-    	List<Byte> stats=new ArrayList<Byte>();
-    	try (Scanner input = new Scanner(System.in)) {
-			System.out.print("Armor Class: ");
-			stats.add(input.nextByte());
-			System.out.print("Attack Modifier: ");
-			//byte attackModifier=input.nextByte();
-			stats.add(input.nextByte());
-			System.out.print("Defense Modifier: ");
-			//byte defenseModifier=input.nextByte();
-			stats.add(input.nextByte());
-		}
-    	return stats;
-    
     }
     
 //    public static byte[] DamageDiceInput(){
