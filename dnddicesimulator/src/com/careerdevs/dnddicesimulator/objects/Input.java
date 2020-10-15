@@ -8,6 +8,7 @@ public class Input {
 
 	 public static List<Byte> InputStats() {
 	    	List<Byte> stats=new ArrayList<Byte>();
+	    	
 	    	try (Scanner input = new Scanner(System.in)) {
 				System.out.print("Armor Class: ");
 				stats.add(input.nextByte());
