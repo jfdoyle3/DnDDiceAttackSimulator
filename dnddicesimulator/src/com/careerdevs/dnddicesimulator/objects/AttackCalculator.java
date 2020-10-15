@@ -9,56 +9,35 @@ public class AttackCalculator {
     private byte ac;
     private byte defenseMod;
     private byte attackModifier;
+    private static boolean special;
 
- 
-
-
-    
 	public static byte Attack(byte ac, byte attackModifier, byte defenseModifier, byte rolledNumber, String damageDice) {
-	
-
-		 byte defense=defense(Input.InputStats().get(0), Input.InputStats().get(2));
+		
 		 int toHit=ToHit(rolledNumber,attackModifier);
-
-        if (rolledNumber==1){
-        	out.println("Crit miss");
-            totalDamage=0;
-        }
-        if (rolledNumber==20){
-        	out.println("Crit hit");
-            totalDamage=(byte) (Damage(damageDice)+Damage(damageDice));
-        }
-        if (toHit>rolledNumber) {
-        	out.println("Hit");
-            totalDamage=Damage(damageDice);
-        } else {
-        	out.println("Miss");
-        	totalDamage=0;
-        }
-
+		 int totalDefense=Defense(ac,defenseModifier);
+		 
+		 if (rolledNumber == 1) {
+				out.println("Critical miss");
+				totalDamage = 0;
+				special = true;
+			}
+			if (rolledNumber == 20) {
+				special = true;
+				out.println("Critical hit");
+				totalDamage = (byte) (DungeonDice.Damage(damageDice) + DungeonDice.Damage(damageDice));
+			}
+			if (rolledNumber >= toHit && !special) {
+				out.println("Hit");
+				totalDamage = DungeonDice.Damage(damageDice);
+			}
+			if (rolledNumber < toHit && !special) {
+				out.println("Miss");
+				totalDamage = 0;
+			}
         return totalDamage;
     }
 
-    public static byte Damage(String dice) {
-      byte diceDamage=0;
-      byte roll=0;
-      String[] diceArray=dice.split( "d");
-      if(diceArray[0].equals("")) {
-           roll=1;
-        } else {
-           roll = Byte.parseByte(diceArray[0]);
-        }
-        Die die=new Die(Byte.parseByte((diceArray[1])));
-       do{
-          die.Roll();
-          diceDamage+=die.getFaceUp();
-          roll--;
-       }while(roll>0);
-
-        return diceDamage;
-    }
-    
-    public static byte defense(byte ac, byte defenseModifier) {
+    public static byte Defense(byte ac, byte defenseModifier) {
     	byte defense=(byte) (ac+defenseModifier);
     	return defense;
     }

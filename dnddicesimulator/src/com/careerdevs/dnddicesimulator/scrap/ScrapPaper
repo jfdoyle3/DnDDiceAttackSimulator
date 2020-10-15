@@ -1,0 +1,26 @@
+		boolean special = false;
+		int toHit = 8;
+		int totalDamage = 0;
+		int rolledNumber = 8;
+		String damageDice = "d4";
+
+		if (rolledNumber == 1) {
+			out.println("Critical miss");
+			totalDamage = 0;
+			special = true;
+		}
+		if (rolledNumber == 20) {
+			special = true;
+			out.println("Critical hit");
+			totalDamage = (byte) (DungeonDice.Damage(damageDice) + DungeonDice.Damage(damageDice));
+		}
+		if (rolledNumber >= toHit && !special) {
+			out.println("Hit");
+			totalDamage = DungeonDice.Damage(damageDice);
+		}
+		if (rolledNumber < toHit && !special) {
+			out.println("Miss");
+			totalDamage = 0;
+		}
+
+		out.print(totalDamage);
