@@ -12,21 +12,14 @@ public class AttackCalculator {
 
  
 
-    public AttackCalculator( byte toHitRoll, byte ac, byte defenseMod, byte attackModifier) {
-		this.toHitRoll = toHitRoll;
-		this.ac = ac;
-		this.defenseMod = defenseMod;
-		this.attackModifier = attackModifier;
-	}
+
     
 	public static byte Attack(byte ac, byte attackModifier, byte defenseModifier, byte rolledNumber, String damageDice) {
+	
 
-		
-		int toHit=ac+defenseModifier;
-       // switch (rolledNumber) {
-          
-         // out.println("normal: you may or may not landed a hit");
-       // }
+		 byte defense=defense(Input.InputStats().get(0), Input.InputStats().get(2));
+		 int toHit=ToHit(rolledNumber,attackModifier);
+
         if (rolledNumber==1){
         	out.println("Crit miss");
             totalDamage=0;
@@ -35,8 +28,12 @@ public class AttackCalculator {
         	out.println("Crit hit");
             totalDamage=(byte) (Damage(damageDice)+Damage(damageDice));
         }
-        if (toHit==rolledNumber) {
+        if (toHit>rolledNumber) {
+        	out.println("Hit");
             totalDamage=Damage(damageDice);
+        } else {
+        	out.println("Miss");
+        	totalDamage=0;
         }
 
         return totalDamage;
@@ -66,7 +63,7 @@ public class AttackCalculator {
     	return defense;
     }
 
-    public static int toHit(int dieRoll, byte attackModifier) {
+    public static int ToHit(int dieRoll, byte attackModifier) {
     		int attack=dieRoll+attackModifier;
     	return attack;
     }

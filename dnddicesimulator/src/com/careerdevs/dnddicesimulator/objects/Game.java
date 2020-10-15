@@ -12,16 +12,16 @@ public class Game {
       List<Byte> inputStats=Input.InputStats();
       
       Die dieTwenty=new Die(20);
+      byte defense=AttackCalculator.defense(inputStats.get(0), inputStats.get(2));
       
       int roll=DungeonDice.RollDie(dieTwenty);
       
       //Console.DisplayDie(dieTwenty);
       
-      byte defense=AttackCalculator.defense(inputStats.get(0), inputStats.get(2));
-      
       out.printf("\n def: %d\n",defense);
       
       out.printf("Rolled: %d",roll);
+    //  int damage=AttackCalculator.Attack(inputStats.get(0),)
       
       
     
