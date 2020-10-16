@@ -28,5 +28,8 @@ public class Console {
 	public static void DisplayMiss() {
 		out.println("Miss");
 	}
+	public static void DisplayToHit(int defense) {
+		out.printf("Need to roll a %d or better to hit",defense);
+	}
 
 }
