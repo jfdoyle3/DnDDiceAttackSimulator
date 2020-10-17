@@ -8,16 +8,16 @@ public class DungeonDice {
         return die.getFaceUp();
     }
     
-    public static byte Damage(String dice) {
-        byte diceDamage=0;
-        byte roll=0;
+    public static int Damage(String dice) {
+        int diceDamage=0;
+        int roll=0;
         String[] diceArray=dice.split( "d");
         if(diceArray[0].equals("")) {
              roll=1;
           } else {
-             roll = Byte.parseByte(diceArray[0]);
+             roll = Integer.parseInt(diceArray[0]);
           }
-          Die die=new Die(Byte.parseByte((diceArray[1])));
+          Die die=new Die(Integer.parseInt((diceArray[1])));
          do{
             die.Roll();
             diceDamage+=die.getFaceUp();

@@ -2,11 +2,17 @@ package com.careerdevs.dnddicesimulator.objects;
 
 import static java.lang.System.out;
 
-
 public class Console {
-
-	public static void DisplayDie(Die die) {
-		out.println(die.getFaceUp());
+	
+	public static void WelcomeMessage(){
+		out.println("D&D Dice Attack Simulator");
+	}
+	
+	public static void DrawLine() {
+		out.print("\n---------------------------\n");
+	}
+	public static void DisplayDie(int die) {
+		out.printf("\nRolled: %d", die);
 	}
 
 	public static void DamageOutput(int damage) {
@@ -14,22 +20,27 @@ public class Console {
 	}
 
 	public static void DisplayCritHit() {
-		out.println("Critical Hit");
+		out.println(" - Critical Hit!!\n");
 	}
 
 	public static void DisplayCritMiss() {
-		out.println("Critical Miss");
+		out.println(" - Critical Miss\n");
 	}
 
 	public static void DisplayHit() {
-		out.println("Hit");
+		out.println(" - Hit");
 	}
 
 	public static void DisplayMiss() {
-		out.println("Miss");
+		out.println(" - Miss");
 	}
+
 	public static void DisplayToHit(int defense) {
-		out.printf("Need to roll a %d or better to hit",defense);
+		out.printf("Need to roll a %d or better to hit", defense);
+	}
+
+	public static void DisplayAttack(int attack) {
+		out.printf("Your roll plus Attack Modifer is %d", attack);
 	}
 
 }

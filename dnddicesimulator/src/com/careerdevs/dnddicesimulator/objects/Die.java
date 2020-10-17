@@ -19,7 +19,7 @@ public class Die {
 
     public void Roll(){
         rand=new Random();
-        faceUp=rand.nextInt(faces)+1;
+        faceUp=(int) (rand.nextInt(faces)+1);
     }
 
     public int getFaceUp(){

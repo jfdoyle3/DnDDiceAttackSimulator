@@ -7,23 +7,23 @@ import java.util.List;
 public class Game {
 
 	public static void Play() {
-		out.print("Play Game\n---------\n");
-
-		List<Byte> inputStats = Input.InputStats();
-
-		
-		// byte defense=AttackCalculator.defense(inputStats.get(0), inputStats.get(2));
+		Console.WelcomeMessage();
+		Console.DrawLine();
+		List<Integer> inputStats = Input.InputStats();
+		int defense = AttackCalculator.Defense(inputStats.get(0), inputStats.get(2));
+		Console.DisplayToHit(defense);
 		Die dieTwenty = new Die(20);
-		int roll = DungeonDice.RollDie(dieTwenty);
-		out.printf("Rolled: %d", roll);
+		//int roll = DungeonDice.RollDie(dieTwenty);
+		int roll=18;
+		int damage=10000;
+		Console.DisplayDie(roll);
+		AttackCalculator.Attack(inputStats.get(0), inputStats.get(1), inputStats.get(2), roll, "2d10");
+		Console.DamageOutput(damage);
 		// Console.DisplayDie(dieTwenty);
 
 		// out.printf("\n def: %d\n",defense);
 
-		
 		// int damage=AttackCalculator.Attack(inputStats.get(0),)
-
-		// AttackCalculator.Attack(5,2,3,DungeonDice.RollDie(dieTwenty),"2d10");
 
 	}
 
