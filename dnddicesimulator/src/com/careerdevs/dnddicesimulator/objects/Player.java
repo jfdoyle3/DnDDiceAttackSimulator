@@ -8,7 +8,6 @@ public class Player {
     private int defenseModifier;
     
 	public Player(int armorClass, int hitPoints, int attackModifier, int defenseModifier) {
-		super();
 		this.armorClass = armorClass;
 		this.hitPoints = hitPoints;
 		this.attackModifier = attackModifier;

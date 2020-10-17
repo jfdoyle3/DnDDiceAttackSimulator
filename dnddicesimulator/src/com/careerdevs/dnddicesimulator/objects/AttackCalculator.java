@@ -1,36 +1,30 @@
 package com.careerdevs.dnddicesimulator.objects;
 
-import static java.lang.System.out;
-
 public class AttackCalculator {
 
 	private static int totalDamage;
-//	private int toHitRoll;
-//	private int ac;
-//	private int defenseMod;
-//	private int attackModifier;
 	private static boolean special;
 
-	public static int Attack(int ac, int attackModifier, int defenseModifier, int rolledNumber, String damageDice) {
+	public static int Attack(Object ac, Object attackModifier, Object defenseModifier, int rolledNumber, Object damageDice) {
 
-		int toHit = ToHit(rolledNumber, attackModifier);
-		int totalDefense = Defense(ac, defenseModifier);
+		int toHit = ToHit(rolledNumber, (int) attackModifier);
+		int totalDefense = Defense((int)ac, (int)defenseModifier);
 
 		if (rolledNumber == 1) {
+			special = true;
 			Console.DisplayCritMiss();
 			totalDamage = 0;
-			special = true;
 		}
 		if (rolledNumber == 20) {
 			special = true;
 			Console.DisplayCritHit();
-			totalDamage = (int) (DungeonDice.Damage(damageDice) + DungeonDice.Damage(damageDice));
+			totalDamage = (int) (DungeonDice.Damage((String)damageDice) + DungeonDice.Damage((String)damageDice));
 		}
-		if (toHit>=totalDefense   && !special) {
+		if (toHit >= totalDefense && !special) {
 			Console.DisplayHit();
-			totalDamage = DungeonDice.Damage(damageDice);
+			totalDamage = DungeonDice.Damage((String) damageDice);
 		}
-		if (toHit <totalDefense  && !special) {
+		if (toHit < totalDefense && !special) {
 			Console.DisplayMiss();
 			totalDamage = 0;
 		}
@@ -38,7 +32,8 @@ public class AttackCalculator {
 	}
 
 	public static int Defense(int ac, int defenseModifier) {
-		int defense = (int) (ac + defenseModifier);
+		
+		int defense = ac + defenseModifier;
 		return defense;
 	}
 
@@ -47,7 +42,3 @@ public class AttackCalculator {
 		return attack;
 	}
 }
-
-//    create a Calculator class that has the attack method: it should accept the following:
-//        (int ac, int defenseMod, int attackModifier, string damageDice)
-//int ac, int defenseMod, int attackModifier,
