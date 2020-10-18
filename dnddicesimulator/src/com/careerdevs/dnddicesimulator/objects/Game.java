@@ -9,7 +9,6 @@ public class Game {
 		Console.WelcomeMessage();
 		Console.DrawLine();
 		List<Object> inputStats = Input.InputStats();
-		//String weaponDamage=Input.WeaponDamage();
 		int defense = AttackCalculator.Defense((int)inputStats.get(0),(int) inputStats.get(2));
 		Console.DisplayToHit(defense);
 		Die dieTwenty = new Die(20);
