@@ -17,5 +17,4 @@ public class Game {
 		int damage=AttackCalculator.Attack(inputStats.get(0), inputStats.get(1), inputStats.get(2), roll, inputStats.get(3));
 		Console.DamageOutput(damage);
 	}
-
 }
